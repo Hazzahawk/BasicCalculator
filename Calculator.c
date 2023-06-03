@@ -28,7 +28,7 @@ void main(){
     while (active){
     printf("Welcome to the Calculator\n");
     printf("Select an operation\n");
-    printf("+ , - , * or /\n");
+    printf(" + , - , *, .  or e to exit \n");
 
 
     scanf(" %c", &symbol );
@@ -36,8 +36,7 @@ void main(){
    // test symbol printf("%c", symbol);
 
     operator = selection(symbol); 
-sw
-itch(operator){
+switch(operator){
     case 1:
         printf("Input the two numbers you would like to add:\n");
         scanf("%d",&numA);
@@ -46,7 +45,6 @@ itch(operator){
         res = addition(numA, numB);
 
         printf("The result is %d\n", res);
-        printf("%d\n", operator);
 
         sleep(2);
         break;
@@ -90,8 +88,12 @@ itch(operator){
         sleep(1);
         break;
     case 6:
-        printf("Stopping Program...");
-        sleep(2);
+        printf("Stopping Program.\n");
+        sleep(1);
+        printf("Stopping Program..\n");
+        sleep(1);
+        printf("Stopping Program...\n");
+        sleep(1);
         active = 0;
         break;
 
@@ -100,11 +102,6 @@ itch(operator){
 
 
 }
-
-
-  // CHECKS WHAT STATE WE ARE IN 
- // printf("%d\n\n", operator);
-
 
     }
 }
@@ -127,10 +124,14 @@ char selection(char symbol){
         {
             operator = 4;
         }
-    else if (symbol == '\n')
+    else if (symbol == 'e')
+        {
+            operator = 6;
+        }
+   /* else if (symbol == '\n')
         {
             operator = 0;
-        }
+        }*/
     else{
         operator = 5;
     }
